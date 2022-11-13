@@ -1,0 +1,15 @@
+
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.card{
+  height: 200px;
+  margin-bottom: 50px;
+  text-align: center;
+
+  img{
+    object-fit: contain;
+    height: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Memes</h3>
+  <div class="cards row">
+      <div class="col-4" *ngFor="let item of memes">
+        <div class="card">
+          <img [src]="item.url" alt="meme">
+          <p>{{item.name}}</p>
+        </div>
+      </div>
+  </div>
+</div>

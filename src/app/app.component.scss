@@ -1,0 +1,14 @@
+.header{
+  height: 70px;
+  background: lightseagreen;
+  color: white;
+  .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .tab{
+    min-width: 200px;
+    cursor: pointer;
+  }
+}
