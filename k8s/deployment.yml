@@ -16,6 +16,7 @@ spec:
       containers:
         - name: app-container
           image: chbanianass20/memesapp:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
