@@ -20,4 +20,4 @@ spec:
             - containerPort: 80
           env:
             - name: SERVER_IP_ADDRESS
-              value: http://ec2-3-82-213-43.compute-1.amazonaws.com
+              value: ec2-3-82-213-43.compute-1.amazonaws.com
