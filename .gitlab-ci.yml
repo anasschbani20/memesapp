@@ -1,0 +1,37 @@
+image: docker:latest
+default:
+  tags:
+    - docker-eazytraining
+services:
+  - name: docker:20-dind
+    alias: docker
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t $DOCKER_IMAGE_NAME/latest .
+  artifacts:
+    paths:
+      - dist/base
+
+test:
+  stage: test
+  image: node:14.20.1
+  script:
+    - echo "TESTS"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "LOGIN"
+    - docker login registry.gitlab.com -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_MANAGER
+    - echo "BUILDING"
+    - docker build -t $DOCKER_IMAGE_NAME:latest .
+    - echo "PUSHING"
+    - docker push $CI_REGISTRY_IMAGE:latest
+
